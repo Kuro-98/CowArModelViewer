@@ -53,6 +53,15 @@
       background-color: #b00deb;
     }
 
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin: 20px 0;
+      font-style: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #007bff;
+    }
+
     /* Estilo para dispositivos móviles (ancho de pantalla <= 768px) */
     @media (max-width: 768px) {
       .Main {
@@ -67,7 +76,7 @@
 </head>
 
 <body>
-  <!-- Use it like any other HTML element -->
+  <h1>Modelos 3D con Model Viewer</h1>
   <div class="principal">
     <div class="Main">
       <model-viewer src="./Cow.gltf" camera-controls auto-rotate ar ios-src="./Cow.usdz" xr-placemnt="manual"
