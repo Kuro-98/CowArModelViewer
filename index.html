@@ -53,6 +53,10 @@
       background-color: #b00deb;
     }
 
+    .Diferent {
+      background: red;
+    }
+
     h1 {
       text-align: center;
       font-size: 22px;
@@ -93,14 +97,41 @@
       </model-viewer>
     </div>
 
-    <div class="Main">
+    <div class="Main Diferent" id="arContainer">
       <model-viewer src="./PeterHeadNoHairLashesMoustBrows.gltf" ar ar-placement="wall" camera-controls
-        touch-action="pan-y" alt="A 3D model of some wall art"></model-viewer>
+        ios-src="./PeterHeadNoHairLashesMoustBrows.usdz" xr-placemnt="manual" interaction-prompt="gestures"
+        xr-environment style="--model-viewer-scale: 0.5;"></model-viewer>
     </div>
 
   </div>
 
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <script>
+    const arContainer = document.getElementById('arContainer');
+    const modelViewer = arContainer.querySelector('model-viewer');
+
+    let isPlacing = false;
+
+    modelViewer.addEventListener('click', (event) => {
+      if (isPlacing) {
+        const intersection = event.detail.intersection;
+        if (intersection) {
+          const position = intersection.point;
+          // Establecer la posición del modelo en la posición del clic
+          modelViewer.cameraTarget = position;
+          isPlacing = false; // Detener el modo de colocación
+        }
+      }
+    });
+
+    // Agregar un botón para activar el modo de colocación
+    const placeButton = document.createElement('button');
+    placeButton.textContent = 'Colocar Modelo';
+    placeButton.addEventListener('click', () => {
+      isPlacing = true;
+    });
+    arContainer.appendChild(placeButton);
+  </script>
 </body>
 
 </html>
