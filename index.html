@@ -8,15 +8,23 @@
   <style>
     .principal {
       display: flex;
-      justify-content: space-between;
-      /* Distribuye los elementos horizontalmente */
+      flex-direction: column;
+      /* Coloca los modelos uno encima del otro */
+      align-items: center;
+      /* Centra horizontalmente */
+      justify-content: space-around;
+      /* Centra verticalmente */
+      height: 100vh;
+      /* Establece la altura de la sección principal para centrar verticalmente */
     }
 
     .Main {
+
       width: 400px;
       /* Ancho de cada model-viewer */
-      height: 800px;
-      margin: 0 auto;
+      height: 500px;
+      margin: 20px auto 40px;
+      /* Agrega margen para separar los modelos */
     }
 
     /* Estilo personalizado para el botón de la cámara */
