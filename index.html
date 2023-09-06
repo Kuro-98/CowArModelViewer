@@ -53,10 +53,6 @@
       background-color: #b00deb;
     }
 
-    .Diferent {
-      background: red;
-    }
-
     h1 {
       text-align: center;
       font-size: 22px;
@@ -92,7 +88,7 @@
 
     <div class="Main">
       <model-viewer src="./Cow.gltf" camera-controls auto-rotate ar ios-src="./Cow.usdz" xr-placemnt="manual"
-        interaction-prompt="gestures" xr-environment>
+        interaction-prompt="gestures" xr-environment style="--model-viewer-scale: 0.5;" camera-target="0 0 -2">
         <button class="custom-camera-button" slot="ar-button">Activar Cámara2</button>
       </model-viewer>
     </div>
@@ -100,8 +96,21 @@
     <div class="Main Diferent" id="arContainer">
       <model-viewer src="./PeterHeadNoHairLashesMoustBrows.gltf" ar ar-placement="wall" camera-controls
         ios-src="./PeterHeadNoHairLashesMoustBrows.usdz" xr-placemnt="manual" interaction-prompt="gestures"
-        xr-environment style="--model-viewer-scale: 0.5;"></model-viewer>
-        //coment
+        xr-environment style="--model-viewer-scale: 0.5;" camera-target="0 0 -2"></model-viewer>
+      //coment
+    </div>
+
+    <div class="Main">
+      <model-viewer src="/Cow.gltf" camera-controls auto-rotate ar xr-placemnt="manual" interaction-prompt="gestures"
+        xr-environment>
+        <button class="custom-camera-button" slot="ar-button">Activar Cámara</button>
+
+        <!-- Primer modelo -->
+        <a-entity gltf-model="./Cow.gltf" position="1 0 -2"></a-entity>
+
+        <!-- Segundo modelo -->
+        <a-entity gltf-model="./Cow.gltf" position="-1 0 -3"></a-entity>
+      </model-viewer>
     </div>
 
   </div>
