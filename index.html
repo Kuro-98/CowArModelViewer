@@ -27,7 +27,7 @@
       /* Agrega margen para separar los modelos */
     }
 
-    model-viewer{
+    model-viewer {
       width: 100%;
       height: 100%;
     }
@@ -50,6 +50,17 @@
     .custom-camera-button:hover {
       background-color: #b00deb;
     }
+
+    /* Estilo para dispositivos móviles (ancho de pantalla <= 768px) */
+    @media (max-width: 768px) {
+      .Main {
+        width: 100%;
+        /* Ancho del 100% para ocupar el ancho de la pantalla */
+        max-width: 400px;
+        /* Ancho máximo para mantener el tamaño deseado */
+        margin: 20px auto;
+        /* Margen en los lados y centrado horizontalmente */
+      }
   </style>
 </head>
 
