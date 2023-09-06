@@ -6,8 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    model-viewer {
+    .principal {
+      display: flex;
+      justify-content: space-between;
+      /* Distribuye los elementos horizontalmente */
+    }
+
+    .Main {
       width: 400px;
+      /* Ancho de cada model-viewer */
       height: 800px;
       margin: 0 auto;
     }
@@ -16,11 +23,8 @@
     .custom-camera-button {
       position: absolute;
       top: 20px;
-      /* Ajusta la posición vertical */
       right: 20px;
-      /* Ajusta la posición horizontal */
       z-index: 2;
-      /* Asegura que esté por encima del modelo 3D */
       background-color: #007bff;
       color: white;
       border: none;
@@ -33,41 +37,28 @@
     .custom-camera-button:hover {
       background-color: #b00deb;
     }
-
-
-    .Main {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   </style>
 </head>
 
 <body>
-
-
   <!-- Use it like any other HTML element -->
+  <div class="principal">
+    <div class="Main">
+      <model-viewer src="./Cow.gltf" camera-controls auto-rotate ar ios-src="./Cow.usdz" xr-placemnt="manual"
+        interaction-prompt="gestures" xr-environment>
+        <button class="custom-camera-button" slot="ar-button">Activar Cámara</button>
+      </model-viewer>
+    </div>
 
-  <div class="Main">
-    <model-viewer src="./Cow.gltf" camera-controls auto-rotate ar ios-src="./Cow.usdz" xr-placemnt="manual"
-      interaction-prompt="gestures" xr-environment>
-      <button class="custom-camera-button" slot="ar-button">Activar Cámara</button>
-    </model-viewer>
+    <div class="Main">
+      <model-viewer src="./Cow.gltf" camera-controls auto-rotate ar ios-src="./Cow.usdz" xr-placemnt="manual"
+        interaction-prompt="gestures" xr-environment>
+        <button class="custom-camera-button" slot="ar-button">Activar Cámara2</button>
+      </model-viewer>
+    </div>
   </div>
-
-  <div class="Main">
-    <model-viewer src="./Cow.gltf" camera-controls auto-rotate ar ios-src="./Cow.usdz" xr-placemnt="manual"
-      interaction-prompt="gestures" xr-environment>
-      <button class="custom-camera-button" slot="ar-button">Activar Cámara2</button>
-    </model-viewer>
-  </div>
-
-
 
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
-
 </body>
 
 </html>
